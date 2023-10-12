@@ -8,7 +8,7 @@
   "api": {
     "baseUrl": "https://walletlabels.xyz/"
   },
-  "favicon": "/favicon.png",
+  "favicon": "/favicon_tp.ico",
   "colors": {
     "primary": "#9563FF",
     "light": "#AE87FF",
