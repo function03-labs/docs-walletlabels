@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "WalletLabels API",
+  "name": "WalletLabels API Docs",
   "logo": {
     "dark": "/logo/logo.png",
     "light": "/logo/logo.png"
