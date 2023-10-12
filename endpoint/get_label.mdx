@@ -1,0 +1,94 @@
+---
+title: "Get Labels"
+api: "GET https://walletlabels.xyz/api/query"
+description: "This endpoint gets general labels for ethereum accounts."
+---
+
+### Body
+
+<ParamField body="query" type="string">
+  Specify the Ethereum address or the label name.
+</ParamField>
+
+<ParamField body="limit" type="integer" optional>
+  The maximum number of labels to return (default is 20, maximum is 100).
+</ParamField>
+
+<ParamField body="API Key" type="integer" optional>
+  API Key (optional)
+</ParamField>
+
+### Response
+
+<ResponseField name="data" type="array">
+  This array contains the labels that correspond to the provided address or query.
+
+<Expandable title="Label Object">
+
+<ResponseField name="address_name" type="string">
+  Designated name or identifier associated with the Ethereum address for the
+  specified label.
+</ResponseField>
+
+{" "}
+
+<ResponseField name="address" type="string">
+  This is the actual Ethereum address corresponding to the label.
+</ResponseField>
+
+{" "}
+
+<ResponseField name="label_type" type="string">
+  This categorizes the type of label, such as token, exchange, etc.
+</ResponseField>
+
+{" "}
+
+<ResponseField name="label_subtype" type="string">
+  Further classifies the label, providing more specific details like
+  token_contract_address, exchange_name, and so forth.
+</ResponseField>
+
+{" "}
+
+<ResponseField name="label" type="string">
+  The official name or title of the label.
+</ResponseField>
+
+  </Expandable>
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location --request GET 'https://www.walletlabels.xyz/api/sc_names?query=protocol&limit=5' \
+--header 'Content-Type: application/json'
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+  "data": [
+    {
+      "address_name": "Uniswap",
+      "address": "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f",
+      "label_type": "contract",
+      "label_subtype": "decentralized_exchange",
+      "label": "Uniswap V2 Factory Contract"
+    },
+    {
+      "address_name": "DAI Stablecoin",
+      "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "label_type": "token",
+      "label_subtype": "erc20",
+      "label": "DAI ERC20 Token Contract"
+    }
+    // ... more results ...
+  ]
+}
+```
+
+</ResponseExample>

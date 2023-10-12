@@ -1,0 +1,92 @@
+---
+title: "Get Smart Contract Labels"
+api: "GET https://walletlabels.xyz/api/sc_names"
+description: "This endpoint gets labels for over 200k verified smart contracts."
+---
+
+### Body
+
+<ParamField body="query" type="string" required>
+  Smart contract address or label to search for.
+</ParamField>
+
+<ParamField body="limit" type="integer" optional>
+  The maximum number of results to return (default is 20, maximum is 100).
+</ParamField>
+
+<ParamField body="API Key" type="integer" optional>
+  API Key (optional)
+</ParamField>
+
+### Response
+
+<ResponseField name="data" type="array">
+  A list of results that match the given address or label entry.
+
+<Expandable title="Label Object">
+
+<ResponseField name="address_name" type="string">
+  The name of the smart contract address for the label.
+</ResponseField>
+
+{" "}
+
+<ResponseField name="address" type="string">
+  The smart contract address
+</ResponseField>
+
+{" "}
+
+<ResponseField name="label_type" type="string">
+  The type of the label (e.g. contract, token, etc).
+</ResponseField>
+
+{" "}
+
+<ResponseField name="label_subtype" type="string">
+  The subtype of label (e.g. decentralized exchange, token, marketplace etc).
+</ResponseField>
+
+{" "}
+
+<ResponseField name="label" type="string">
+  The name of the smart contract. (e.g. Uniswap V2 Factory Contract)
+</ResponseField>
+
+  </Expandable>
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location --request GET 'https://www.walletlabels.xyz/api/query?query=dex&limit=5' \
+--header 'Content-Type: application/json'
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+  "data": [
+    {
+      "address_name": "MantisMansionStaking",
+      "address": "0x430E08BF0b8fd17A93E47E57Da53fec1c89D4D9A",
+      "label_type": "general address",
+      "label_subtype": "Staking Contract",
+      "label": "MantisMansionStaking"
+    },
+    {
+      "address_name": "UniswapV2Factory",
+      "address": "0x5C69bEe701ef814a2B6a3EDD4d3E647068eb497cB",
+      "label_type": "general address",
+      "label_subtype": "Decentralized Exchange",
+      "label": "Uniswap V2 Factory Contract"
+    }
+    // ... more results ...
+  ]
+}
+```
+
+</ResponseExample>
