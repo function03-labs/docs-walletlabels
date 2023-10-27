@@ -1,58 +1,53 @@
 ---
-title: "Account Labels"
-api: "GET https://walletlabels.xyz/api/query"
-description: "This endpoint gets general labels for ethereum accounts."
+title: "Account Labels API"
+api: "GET https://api-c.walletlabels.xyz/ethereum/address"
+description: "Retrieve user-friendly labels for Ethereum EOAs (Externally Owned Accounts) and Smart Contracts. Labels can be incredibly useful for categorizing your Ethereum interactions."
 ---
 
 ### Body
 
-<ParamField query="query" type="string" required>
-  Specify the Ethereum address or the label name.
+<ParamField query="address" type="string" required>
+  Specify the Ethereum address for which you want to retrieve labels.
 </ParamField>
 
-<ParamField query="limit" type="integer" optional>
-  The maximum number of labels to return (default is 20, maximum is 100).
-</ParamField>
-
-<ParamField query="API-Key" type="integer" optional>
-  API Key (optional)
+<ParamField query="x-api-key" type="integer" default="demo" required>
+  Your API key for authentication.
 </ParamField>
 
 ### Response
 
 <ResponseField name="data" type="array">
-  This array contains the labels that correspond to the provided address or query.
+  An array that encapsulates the labels corresponding to the Ethereum address provided.
 
 <Expandable title="Label Object">
 
 <ResponseField name="address_name" type="string">
-  Designated name or identifier associated with the Ethereum address for the
-  specified label.
+  The designated name associated with the specific Ethereum address.
 </ResponseField>
 
 {" "}
 
 <ResponseField name="address" type="string">
-  This is the actual Ethereum address corresponding to the label.
+  The Ethereum address for the label.
 </ResponseField>
 
 {" "}
 
 <ResponseField name="label_type" type="string">
-  This categorizes the type of label, such as token, exchange, etc.
+  Categories like 'token', 'exchange', etc., to define the nature of the label.
 </ResponseField>
 
 {" "}
 
 <ResponseField name="label_subtype" type="string">
-  Further classifies the label, providing more specific details like
-  token_contract_address, exchange_name, and so forth.
+  Additional attributes, like token_contract_address or exchange_name, for a
+  more granular understanding of the label.
 </ResponseField>
 
 {" "}
 
 <ResponseField name="label" type="string">
-  The official name or title of the label.
+  The general name or title of the label.
 </ResponseField>
 
   </Expandable>
@@ -61,8 +56,9 @@ description: "This endpoint gets general labels for ethereum accounts."
 <RequestExample>
 
 ```bash Example Request
-curl --location --request GET 'https://www.walletlabels.xyz/api/sc_names?query=protocol&limit=5' \
---header 'Content-Type: application/json'
+curl --location --request GET 'https://walletlabels.xyz/api/query?address=0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: demo'
 ```
 
 </RequestExample>
@@ -78,15 +74,7 @@ curl --location --request GET 'https://www.walletlabels.xyz/api/sc_names?query=p
       "label_type": "contract",
       "label_subtype": "decentralized_exchange",
       "label": "Uniswap V2 Factory Contract"
-    },
-    {
-      "address_name": "DAI Stablecoin",
-      "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-      "label_type": "token",
-      "label_subtype": "erc20",
-      "label": "DAI ERC20 Token Contract"
     }
-    // ... more results ...
   ]
 }
 ```

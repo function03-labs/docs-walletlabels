@@ -1,0 +1,93 @@
+---
+title: "Contract Labels API (Beta)"
+api: "GET https://api-c.walletlabels.xyz/ethereum/contractlabel"
+description: "This beta endpoint provides both labels and metadata for all verified Ethereum Smart Contracts. It's a powerful resource for gaining insights into contract categorization and behavior."
+---
+
+### Body
+
+<ParamField query="address" type="string" required>
+  Specify the Smart Contract's Ethereum address for which you want to gather
+  labels and metadata.
+</ParamField>
+
+<ParamField query="API-Key" type="string" default="demo" optional>
+  Your API key for authentication.
+</ParamField>
+
+### Response
+
+<ResponseField name="data" type="array">
+  An array containing labels and metadata that correspond to the verified Smart Contract address provided.
+<Expandable title="Label Object">
+
+<ResponseField name="address_name" type="string">
+  The name associated with the Smart Contract address.
+</ResponseField>
+
+{" "}
+
+<ResponseField name="address" type="string">
+  The Ethereum address of the Smart Contract.
+</ResponseField>
+
+{" "}
+
+<ResponseField name="label_type" type="string">
+  The type of the label (e.g. contract, token, etc).
+</ResponseField>
+
+{" "}
+
+<ResponseField name="label_subtype" type="string">
+  More specific details like staking_contract, nft_platform, etc., offering a
+  granular categorization.
+</ResponseField>
+
+{" "}
+
+<ResponseField name="label" type="string">
+  The general name or title of the label. (e.g. Uniswap V2 Factory Contract)
+</ResponseField>
+
+<ResponseField name="metadata" type="object">
+  Additional metadata associated with the Smart Contract, such as owner address,
+  creation date, etc.
+</ResponseField>
+
+  </Expandable>
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location --request GET 'https://api-c.walletlabels.xyz/ethereum/contractlabel?address=0xContractAddressHere' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: demo'
+
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+  "data": [
+    {
+      "address_name": "CompUniswapV2Factoryound",
+      "address": "0x5C69bEe701ef814a2B6a3EDD4d3E647068eb497cB",
+      "label_type": "general address",
+      "label_subtype": "Decentralized Exchange",
+      "label": "Uniswap V2 Factory Contract",
+      "metadata": {
+        "owner_address": "0x5C69bEe701ef814a2B6a3EDD4d3E647068eb497cB",
+        "creation_date": "YYYY-MM-DD",
+        "etc": "Additional Metadata"
+      }
+    }
+  ]
+}
+```
+
+</ResponseExample>

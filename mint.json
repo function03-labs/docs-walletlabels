@@ -52,7 +52,7 @@
       "group": "API Reference",
       "pages": [
         "endpoint/get_label",
-        "endpoint/get_label_contracts",
+        "endpoint/contracts_labels.mdx",
         "endpoint/search"
       ]
     }
