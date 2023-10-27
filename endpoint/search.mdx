@@ -1,20 +1,22 @@
 ---
-title: "Account Labels"
-api: "GET https://walletlabels.xyz/api/query"
+title: "Search By Label"
+api: "POST https://walletlabels.xyz/api/query"
 description: "This endpoint gets general labels for ethereum accounts."
 ---
 
+```sh
 ### Body
+```
 
-<ParamField query="query" type="string" required>
+<ParamField body="query" type="string">
   Specify the Ethereum address or the label name.
 </ParamField>
 
-<ParamField query="limit" type="integer" optional>
+<ParamField body="limit" type="integer" optional>
   The maximum number of labels to return (default is 20, maximum is 100).
 </ParamField>
 
-<ParamField query="API-Key" type="integer" optional>
+<ParamField body="API Key" type="integer" optional>
   API Key (optional)
 </ParamField>
 
@@ -60,7 +62,7 @@ description: "This endpoint gets general labels for ethereum accounts."
 
 <RequestExample>
 
-```bash Example Request
+```bash
 curl --location --request GET 'https://www.walletlabels.xyz/api/sc_names?query=protocol&limit=5' \
 --header 'Content-Type: application/json'
 ```
@@ -69,7 +71,7 @@ curl --location --request GET 'https://www.walletlabels.xyz/api/sc_names?query=p
 
 <ResponseExample>
 
-```json Response
+```json
 {
   "data": [
     {

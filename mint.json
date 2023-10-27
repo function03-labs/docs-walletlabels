@@ -1,12 +1,12 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "WalletLabels API Docs",
+  "name": "WalletLabels API",
   "logo": {
     "dark": "/logo/logo.png",
     "light": "/logo/logo.png"
   },
   "api": {
-    "baseUrl": "https://walletlabels.xyz/"
+    "baseUrl": "https://api-c.walletlabels.xyz/"
   },
   "favicon": "/favicon.png",
   "colors": {
@@ -25,7 +25,12 @@
     "default": "light",
     "isHidden": true
   },
-  "topbarLinks": [],
+  "topbarLinks": [
+    {
+      "name": "Get an API key",
+      "url": "https://acp405ffvl9.typeform.com/to/dUiLG1lK"
+    }
+  ],
   "topbarCtaButton": {
     "name": "WalletLabels",
     "url": "https://WalletLabels.xyz"
@@ -45,7 +50,11 @@
   "navigation": [
     {
       "group": "API Reference",
-      "pages": ["endpoint/get_label", "endpoint/get_label_contracts"]
+      "pages": [
+        "endpoint/get_label",
+        "endpoint/get_label_contracts",
+        "endpoint/search"
+      ]
     }
   ]
 }
