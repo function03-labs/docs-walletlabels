@@ -6,8 +6,17 @@
     "light": "/logo/logo.png"
   },
   "api": {
-    "baseUrl": "https://api-c.walletlabels.xyz/"
+    "baseUrl": "https://api-c.walletlabels.xyz/",
+    "auth": {
+      "method": "key",
+      "name": "x-api-key",
+      "inputPrefix": "demo"
+    },
+    "playground": {
+      "mode": "show"
+    }
   },
+
   "favicon": "/favicon.png",
   "colors": {
     "primary": "#9563FF",
@@ -52,7 +61,7 @@
       "group": "API Reference",
       "pages": [
         "endpoint/get_label",
-        "endpoint/contracts_labels.mdx",
+        "endpoint/contracts_labels",
         "endpoint/search"
       ]
     }

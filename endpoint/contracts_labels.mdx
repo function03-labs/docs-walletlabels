@@ -4,15 +4,22 @@ api: "GET https://api-c.walletlabels.xyz/ethereum/contractlabel"
 description: "This beta endpoint provides both labels and metadata for all verified Ethereum Smart Contracts. It's a powerful resource for gaining insights into contract categorization and behavior."
 ---
 
+### Authorization
+
+<ResponseField
+  name="x-api-key"
+  type="string"
+  default="demo"
+  initialValue="demo"
+  required
+>
+  Your API key for authentication.
+</ResponseField>
 ### Body
 
 <ParamField query="address" type="string" required>
   Specify the Smart Contract's Ethereum address for which you want to gather
   labels and metadata.
-</ParamField>
-
-<ParamField query="API-Key" type="string" default="demo" optional>
-  Your API key for authentication.
 </ParamField>
 
 ### Response

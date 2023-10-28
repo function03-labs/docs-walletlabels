@@ -4,14 +4,22 @@ api: "GET https://api-c.walletlabels.xyz/ethereum/address"
 description: "Retrieve user-friendly labels for Ethereum EOAs (Externally Owned Accounts) and Smart Contracts. Labels can be incredibly useful for categorizing your Ethereum interactions."
 ---
 
+### Authorization
+
+<ResponseField
+  name="x-api-key"
+  type="string"
+  default="demo"
+  initialValue="demo"
+  required
+>
+  Your API key for authentication.
+</ResponseField>
+
 ### Body
 
 <ParamField query="address" type="string" required>
   Specify the Ethereum address for which you want to retrieve labels.
-</ParamField>
-
-<ParamField query="x-api-key" type="integer" default="demo" required>
-  Your API key for authentication.
 </ParamField>
 
 ### Response
@@ -56,7 +64,7 @@ description: "Retrieve user-friendly labels for Ethereum EOAs (Externally Owned 
 <RequestExample>
 
 ```bash Example Request
-curl --location --request GET 'https://walletlabels.xyz/api/query?address=0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f' \
+curl --location --request GET 'https://api-c.walletlabels.xyz/ethereum/address?address=0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f' \
 --header 'Content-Type: application/json' \
 --header 'x-api-key: demo'
 ```
