@@ -10,7 +10,7 @@
     "auth": {
       "method": "key",
       "name": "x-api-key",
-      "inputPrefix": "demo"
+      "inputPrefix": "demo-api-key-x-00000"
     },
     "playground": {
       "mode": "show"
