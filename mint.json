@@ -60,7 +60,7 @@
     {
       "group": "API Reference",
       "pages": [
-        "endpoint/get_label",
+        "endpoint/label",
         "endpoint/contracts_labels",
         "endpoint/search"
       ]
