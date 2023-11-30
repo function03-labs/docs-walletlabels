@@ -1,7 +1,7 @@
 ---
 title: "Account Labels API"
-api: "GET https://api-c.walletlabels.xyz/ethereum/label"
-description: "Retrieve user-friendly labels for Ethereum EOAs (Externally Owned Accounts) and Smart Contracts. Labels can be incredibly useful for categorizing your Ethereum interactions."
+api: "GET https://api-c.walletlabels.xyz/optimism/label"
+description: "Retrieve user-friendly labels for Optimism EOAs (Externally Owned Accounts) and Smart Contracts. Labels can be incredibly useful for categorizing your Optimism interactions."
 ---
 
 ### Authorization
@@ -19,24 +19,24 @@ description: "Retrieve user-friendly labels for Ethereum EOAs (Externally Owned 
 ### Body
 
 <ParamField query="address" type="string" required>
-  Specify the Ethereum address for which you want to retrieve labels.
+  Specify the Optimism address for which you want to retrieve labels.
 </ParamField>
 
 ### Response
 
 <ResponseField name="data" type="array">
-  An array that encapsulates the labels corresponding to the Ethereum address provided.
+  An array that encapsulates the labels corresponding to the Optimism address provided.
 
 <Expandable title="Label Object">
 
 <ResponseField name="address_name" type="string">
-  The designated name associated with the specific Ethereum address.
+  The designated name associated with the specific Optimism address.
 </ResponseField>
 
 {" "}
 
 <ResponseField name="address" type="string">
-  The Ethereum address for the label.
+  The Optimism address for the label.
 </ResponseField>
 
 {" "}
@@ -64,7 +64,7 @@ description: "Retrieve user-friendly labels for Ethereum EOAs (Externally Owned 
 <RequestExample>
 
 ```bash Example Request
-curl --location --request GET 'https://api-c.walletlabels.xyz/ethereum/address?address=0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f' \
+curl --location --request GET 'https://api-c.walletlabels.xyz/optimism/address?address=0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f' \
 --header 'Content-Type: application/json' \
 --header 'x-api-key: demo-api-key-x-00000'
 ```
