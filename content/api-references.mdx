@@ -1,0 +1,59 @@
+--- 
+title: WalletLabels API Reference
+description: Reference for WalletLabels API Endpoints
+--- 
+
+
+Our API offers a comprehensive suite of tools for labeling and analyzing blockchain wallet addresses. It's designed to enrich your applications with detailed context and insights into blockchain transactions.
+
+## Getting Started
+
+**Base URL:** `https://api-c.walletlabels.xyz/`
+
+To begin using the WalletLabels API, you first need to obtain an API key. Please [register here](https://tally.so/r/mO7PrR) to get started.
+
+### Authentication
+
+<Tip>Currently, there are no rate limits on API requests.</Tip>
+
+Use your API key in every request to the API:
+
+```http
+Headers:
+  x-api-key: demo-api-key-x-00000
+``` 
+
+
+Label Data Structure
+--------------------
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `_id` | String | Unique identifier for the label record. |
+| `blockchain` | String | Name of the blockchain network. |
+| `address` | String | Blockchain address being labeled. |
+| `address_name` | String | Human-readable name for the address. |
+| `label_type` | String | Broad category of the label (e.g., 'token'). |
+| `label_subtype` | String | Specific categorization under the label type. |
+| `label` | String | Concise label or tag for the address. |
+
+Playground
+----------
+
+Test the API live in our [playground](https://chat.openai.com/c/1249d274-3d7a-4296-bfb1-bcccaaa1fff6#). Try out different requests and see real-time responses.
+
+Support and Community
+---------------------
+
+Join our [Telegram community](https://t.me/+YjWehy_NArsyZTc0) for support, discussions, and updates. Follow us on [Twitter](https://twitter.com/walletlabels) for the latest news.
+
+Additional Resources
+--------------------
+
+-   API Key Registration: [Get an API key](https://tally.so/r/mO7PrR)
+-   WalletLabels Home: [Visit our website](https://walletlabels.xyz/)
+
+Feedback and Contributions
+--------------------------
+
+Your feedback is invaluable to us. For feature requests, feedback, or contributions, please reach out via our community channels.

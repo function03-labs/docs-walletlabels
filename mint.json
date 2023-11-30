@@ -46,10 +46,17 @@
   },
   "footerSocials": {
     "twitter": "https://twitter.com/walletlabels",
-    "telegram": "https://t.me/+YjWehy_NArsyZTc0"
+    "telegram": "https://t.me/+yDF9bnv2R7RkNWZk"
   },
 
   "anchors": [
+    {
+      "name": "API Reference",
+      "icon": "code",
+      "url": "content/"
+
+    },
+   
     {
       "name": "Community",
       "icon": "telegram",
@@ -58,11 +65,30 @@
   ],
   "navigation": [
     {
-      "group": "API Reference",
+      "group": "Getting Started",
       "pages": [
-        "endpoint/label",
-        "endpoint/contracts_labels",
-        "endpoint/search"
+        "content/api-references"
+      ]
+    },
+ 
+    {
+      "group": "Endpoints",
+      "pages": [
+        {
+          "group": "Ethereum API",
+          "pages": ["endpoint/label",
+            "endpoint/contracts_labels",
+            "endpoint/search"]
+        },
+        {
+          "group": "Optimism API",
+          "pages": ["endpoint/optimism/label"]
+        },
+        {
+          "group": "Arbitrum API",
+          "pages": ["endpoint/arbitrum/label"]
+        }
+ 
       ]
     }
   ]
