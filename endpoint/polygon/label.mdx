@@ -1,0 +1,90 @@
+---
+title: "Account Labels API"
+api: "GET https://api-c.walletlabels.xyz/polygon/label"
+description: "Retrieve user-friendly labels for Polygon EOAs (Externally Owned Accounts) and Smart Contracts. Labels can be incredibly useful for categorizing your Polygon interactions."
+---
+
+### Authorization
+
+<ResponseField
+  name="x-api-key"
+  type="string"
+  default="demo-api-key-x-00000"
+  initialValue="demo-api-key-x-00000"
+  required
+>
+  Your API key for authentication.
+</ResponseField>
+
+### Body
+
+<ParamField query="address" type="string" required>
+  Specify the Polygon address for which you want to retrieve labels.
+</ParamField>
+
+### Response
+
+<ResponseField name="data" type="array">
+  An array that encapsulates the labels corresponding to the Polygon address provided.
+
+<Expandable title="Label Object">
+
+<ResponseField name="address_name" type="string">
+  The designated name associated with the specific Polygon address.
+</ResponseField>
+
+{" "}
+
+<ResponseField name="address" type="string">
+  The Polygon address for the label.
+</ResponseField>
+
+{" "}
+
+<ResponseField name="label_type" type="string">
+  Categories like 'token', 'exchange', etc., to define the nature of the label.
+</ResponseField>
+
+{" "}
+
+<ResponseField name="label_subtype" type="string">
+  Additional attributes, like token_contract_address or exchange_name, for a
+  more granular understanding of the label.
+</ResponseField>
+
+{" "}
+
+<ResponseField name="label" type="string">
+  The general name or title of the label.
+</ResponseField>
+
+  </Expandable>
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location --request GET 'https://api-c.walletlabels.xyz/polygon/address?address=0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: demo-api-key-x-00000'
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+  "data": [
+    {
+      "address_name": "Uniswap",
+      "address": "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f",
+      "label_type": "contract",
+      "label_subtype": "decentralized_exchange",
+      "label": "Uniswap V2 Factory Contract"
+    }
+  ]
+}
+```
+
+</ResponseExample>
