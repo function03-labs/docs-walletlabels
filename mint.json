@@ -70,9 +70,30 @@
         "content/api-references"
       ]
     },
- 
     {
-      "group": "Endpoints",
+      "group": "Experimental",
+      "pages": [
+        {
+          "group": "BSC API",
+          "pages": ["endpoint/bsc/label"]
+        },
+        {
+          "group": "Polygon API",
+          "pages": ["endpoint/polygon/label"]
+        },
+        {
+          "group": "AVAX API",
+          "pages": ["endpoint/avax/label"]
+        },
+        {
+          "group": "FTM API",
+          "pages": ["endpoint/ftm/label"]
+        }
+ 
+      ]
+    },
+    {
+      "group": "Essentials",
       "pages": [
         {
           "group": "Ethereum API",
