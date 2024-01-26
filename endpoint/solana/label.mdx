@@ -1,0 +1,96 @@
+---
+title: "Account Labels API"
+api: "GET https://api-c.walletlabels.xyz/solana/label"
+description: "Retrieve user-friendly labels for Solana EOAs (Externally Owned Accounts) and Smart Contracts. Labels can be incredibly useful for categorizing your Solana interactions."
+---
+
+### Authorization
+
+<ResponseField
+  name="x-api-key"
+  type="string"
+  default="demo-api-key-x-00000"
+  initialValue="demo-api-key-x-00000"
+  required
+>
+  Your API key for authentication.
+</ResponseField>
+
+### Body
+{" One of the two following queries options is required to run your query :"}
+
+<ParamField query="address" type="string" required>
+  Specify the Solana address for which you want to retrieve labels.
+</ParamField>
+<ParamField query="label" type="string" required>
+  Specify the Solana address name for which you want to retrieve labels.
+</ParamField>
+<ParamField query="limit" type="string">
+  Specify number of shown results.
+</ParamField>
+### Response
+
+<ResponseField name="data" type="array">
+  An array that encapsulates the labels corresponding to the Solana address provided.
+
+<Expandable title="Label Object">
+
+<ResponseField name="address_name" type="string">
+  The designated name associated with the specific Solana address.
+</ResponseField>
+
+{" "}
+
+<ResponseField name="address" type="string">
+  The Solana address for the label.
+</ResponseField>
+
+{" "}
+
+<ResponseField name="label_type" type="string">
+  Categories like 'nft', 'gaming', etc., to define the nature of the label.
+</ResponseField>
+
+{" "}
+
+<ResponseField name="label_subtype" type="string">
+  Additional attributes, like nf_token_contract or aggregator_contract, for a
+  more granular understanding of the label.
+</ResponseField>
+
+{" "}
+
+<ResponseField name="label" type="string">
+  The general name or title of the label.
+</ResponseField>
+
+  </Expandable>
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location --request GET 'https://api-c.walletlabels.xyz/solana/label?address=6fGr1dR5jBVb58JFgAXvx4rghaoqJMXYZihd19RK898y' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: demo-api-key-x-00000'
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+  "data": [
+    {
+      "ADDRESS":"6fGr1dR5jBVb58JFgAXvx4rghaoqJMXYZihd19RK898y",
+      "ADDRESS_NAME":"ooz",
+      "LABEL_TYPE":"nft",
+      "LABEL_SUBTYPE":"nf_token_contract",
+      "LABEL":"ooz"
+    }
+  ]
+}
+```
+
+</ResponseExample>
