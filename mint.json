@@ -108,6 +108,11 @@
         {
           "group": "Arbitrum API",
           "pages": ["endpoint/arbitrum/label"]
+        },
+        {
+          "group": "Solana API",
+          "pages": ["endpoint/solana/label",
+          "endpoint/solana/search"]
         }
  
       ]
