@@ -1,7 +1,7 @@
 ---
 title: "Account Search API (Beta)"
 api: "GET https://api-c.walletlabels.xyz/solana/search"
-description: "Retrieve user-friendly labels for Solana EOAs (Externally Owned Accounts) and Smart Contracts. Labels can be incredibly useful for categorizing your Solana interactions."
+description: "This endpoint enables you to search and retrieve labels by their names. It's particularly useful for finding specific Solana accounts based on labels."
 ---
 
 ### Authorization
@@ -66,7 +66,7 @@ description: "Retrieve user-friendly labels for Solana EOAs (Externally Owned Ac
 <RequestExample>
 
 ```bash Example Request
-curl --location --request GET 'https://api-c.walletlabels.xyz/solana/search?search=nft&limit=1' \
+curl --location --request GET 'https://api-c.walletlabels.xyz/solana/search?searchtext=nft&limit=1' \
 --header 'Content-Type: application/json' \
 --header 'x-api-key: demo-api-key-x-00000'
 ```

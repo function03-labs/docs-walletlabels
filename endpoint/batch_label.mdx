@@ -1,0 +1,109 @@
+---
+title: "Batch Labels API"
+api: "GET https://api-c.walletlabels.xyz/solana/label"
+description: "This endpoint enables you to search and retrieve multiple labels by their addresses simultaneously.."
+---
+
+### Authorization
+
+<ResponseField
+  name="x-api-key"
+  type="string"
+  default="demo-api-key-x-00000"
+  initialValue="demo-api-key-x-00000"
+  required
+>
+  Your API key for authentication.
+</ResponseField>
+
+### Body
+{" One of the two following queries options is required to run your query :"}
+
+<ParamField query="eth" type="string" required>
+  Specify the Ethereum address for which you want to retrieve labels.
+</ParamField>
+<ParamField query="sol" type="string" required>
+  Specify the Solana address name for which you want to retrieve labels.
+</ParamField>
+### Response
+
+<ResponseField name="data" type="array">
+  An array that encapsulates the labels corresponding to the addresses provided.
+
+<Expandable title="Label Object">
+
+<ResponseField name="address_name" type="string">
+  The designated name associated with the specific address.
+</ResponseField>
+
+{" "}
+
+<ResponseField name="address" type="string">
+  The address for the label.
+</ResponseField>
+
+{" "}
+
+<ResponseField name="label_type" type="string">
+  Categories to define the nature of the label.
+</ResponseField>
+
+{" "}
+
+<ResponseField name="label_subtype" type="string">
+  Additional attributes for a
+  more granular understanding of the label.
+</ResponseField>
+
+{" "}
+
+<ResponseField name="label" type="string">
+  The general name or title of the label.
+</ResponseField>
+
+{" "}
+
+<ResponseField name="score" type="string">
+  The meta-score of the Ethereum label.
+</ResponseField>
+  </Expandable>
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location --request GET 'https://api-c.walletlabels.xyz/batch_label?eth=0x5d446fc8dbd10ebacfe9a427ab5402586af98cd4,0x5d8ce06a40fb101895be5b6560931b92a1b3444f' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: demo-api-key-x-00000'
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+  "data": {"batch_result":[
+    {
+        "address": "0x5d446fc8dbd10ebacfe9a427ab5402586af98cd4",
+        "address_name": "unfederalreserve: unwbtc token",
+        "label_type": "token",
+        "label_subtype": "token_contract",
+        "label": "unfederalreserve",
+        "score": 1.1
+    },
+    {
+        "address": "0x5d8ce06a40fb101895be5b6560931b92a1b3444f",
+        "address_name": "tagz token",
+        "label_type": "token",
+        "label_subtype": "token_contract",
+        "label": "tagz token",
+        "score": 1.1
+    }
+
+  ]
+}
+}
+```
+
+</ResponseExample>
