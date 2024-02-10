@@ -99,7 +99,7 @@
           "group": "Ethereum API",
           "pages": ["endpoint/label",
             "endpoint/contracts_labels",
-            "endpoint/search"]
+            "endpoint/search","endpoint/mev_label"]
         },
         {
           "group": "Optimism API",
