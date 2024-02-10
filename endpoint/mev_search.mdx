@@ -1,6 +1,6 @@
 ---
 title: "Search By MEV type"
-api: "GET https://api-c.walletlabels.xyz/ethereum/mev/search"
+api: "GET https://api-c.walletlabels.xyz/ethereum/mev_search"
 description: " This endpoint enables you to search and retrieve addresses by their attack type. It's particularly useful for finding specific Ethereum accounts based on MEV types."
 ---
 
@@ -70,7 +70,7 @@ description: " This endpoint enables you to search and retrieve addresses by the
 <RequestExample>
 
 ```bash
-curl --location --request GET 'https://api-c.walletlabels.xyz/ethereum/mev/search?searchtext=sandwich' \
+curl --location --request GET 'https://api-c.walletlabels.xyz/ethereum/mev_search?searchtext=sandwich' \
 --header 'Content-Type: application/json' \
 --header 'x-api-key: demo-api-key-x-00000'
 
