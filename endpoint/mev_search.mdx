@@ -1,7 +1,7 @@
 ---
-title: "MEV Labels API"
-api: "GET https://api-c.walletlabels.xyz/ethereum/mev_labels"
-description: "Retrieve user-friendly MEV labels for Ethereum addresses. Labels can be incredibly useful for categorizing your Ethereum interactions."
+title: "Search By MEV type"
+api: "GET https://api-c.walletlabels.xyz/ethereum/mev_search"
+description: " This endpoint enables you to search and retrieve addresses by their attack type. It's particularly useful for finding specific Ethereum accounts based on MEV types."
 ---
 
 ### Authorization
@@ -16,10 +16,10 @@ description: "Retrieve user-friendly MEV labels for Ethereum addresses. Labels c
   Your API key for authentication.
 </ResponseField>
 
-### Body
+### Query Params
 
-<ParamField query="address" type="string" required>
-  Specify the Ethereum address for which you want to retrieve labels.
+<ParamField query="searchtext" type="string" required>
+  Specify the name or part of the type of the MEV you wish to search for.
 </ParamField>
 
 ### Response
@@ -69,33 +69,34 @@ description: "Retrieve user-friendly MEV labels for Ethereum addresses. Labels c
 
 <RequestExample>
 
-```bash Example Request
-curl --location --request GET 'https://api-c.walletlabels.xyz/ethereum/mev_labels?address=0x6b75d8af000000e20b7a7ddf000ba900b4009a80' \
+```bash
+curl --location --request GET 'https://api-c.walletlabels.xyz/ethereum/mev_search?searchtext=sandwich' \
 --header 'Content-Type: application/json' \
 --header 'x-api-key: demo-api-key-x-00000'
+
 ```
 
 </RequestExample>
 
 <ResponseExample>
 
-```json Response
+```json
 {
   "data": [
     {
       "blockchain": "Ethereum",
       "address": "0x6b75d8af000000e20b7a7ddf000ba900b4009a80",
       "label": "MEV",
-      "label_subtype": "Arbitrage",
-      "last_tx": ["0x45712296083971f41975d0298a807fbb96003d10f5aafa29e362302e8a764596"],
-      "protocols":["uniswap_v2"]
+      "label_subtype": "Sandwich",
+      "last_tx": ["0x45712296083971f41975d0298a807fbb96003d10f5aafa29e362302e8a764596", "0xf48f5d6e284a8d8de1c6cc8f6ee1c609a704b65f40fe326a44619fec415d8790"],
+      "protocols":[""]
     },
     {
       "blockchain": "Ethereum",
-      "address": "0x6b75d8af000000e20b7a7ddf000ba900b4009a80",
+      "address": "0xe8c060f8052e07423f71d445277c61ac5138a2e5",
       "label": "MEV",
       "label_subtype": "Sandwich",
-      "last_tx": ["0x45712296083971f41975d0298a807fbb96003d10f5aafa29e362302e8a764596", "0xf48f5d6e284a8d8de1c6cc8f6ee1c609a704b65f40fe326a44619fec415d8790"],
+      "last_tx": ["0xd34f5c5b10a247ac365247ca2ee1a624d7dd294b742ece7b0ad3fe2440ab2e97", "0x747947908bbe3ed2cbf5843ff906b883267fce3562bfd45da91cd775bce045a6"],
       "protocols":[""]
     }
     // ... more results ...
