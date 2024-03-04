@@ -97,8 +97,7 @@
       "pages": [
         {
           "group": "Ethereum API",
-          "pages": [,
-            "endpoint/search", "endpoint/label",
+          "pages": ["endpoint/search", "endpoint/label",
             "endpoint/contracts_labels","endpoint/mev_label","endpoint/mev_search"]
         },
         {
