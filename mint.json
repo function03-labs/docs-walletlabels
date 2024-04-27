@@ -54,9 +54,8 @@
       "name": "API Reference",
       "icon": "code",
       "url": "content/"
-
     },
-   
+
     {
       "name": "Community",
       "icon": "telegram",
@@ -66,39 +65,19 @@
   "navigation": [
     {
       "group": "Getting Started",
-      "pages": [
-        "content/api-references"
-      ]
-    },
-    {
-      "group": "Experimental",
-      "pages": [
-        {
-          "group": "BSC API",
-          "pages": ["endpoint/bsc/label"]
-        },
-        {
-          "group": "Polygon API",
-          "pages": ["endpoint/polygon/label"]
-        },
-        {
-          "group": "AVAX API",
-          "pages": ["endpoint/avax/label"]
-        },
-        {
-          "group": "FTM API",
-          "pages": ["endpoint/ftm/label"]
-        }
- 
-      ]
+      "pages": ["content/api-references"]
     },
     {
       "group": "Essentials",
       "pages": [
         {
           "group": "Ethereum API",
-          "pages": ["endpoint/search", "endpoint/label",
-            "endpoint/contracts_labels","endpoint/mev_label","endpoint/mev_search"]
+          "pages": [
+            "endpoint/search",
+            "endpoint/label",
+            "endpoint/mev_label",
+            "endpoint/mev_search"
+          ]
         },
         {
           "group": "Optimism API",
@@ -110,10 +89,8 @@
         },
         {
           "group": "Solana API",
-          "pages": ["endpoint/solana/label",
-          "endpoint/solana/search"]
+          "pages": ["endpoint/solana/label", "endpoint/solana/search"]
         }
- 
       ]
     }
   ]
