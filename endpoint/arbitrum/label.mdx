@@ -21,6 +21,13 @@ description: "Retrieve user-friendly labels for Arbitrum EOAs (Externally Owned 
 <ParamField query="address" type="string" required>
   Specify the Arbitrum address for which you want to retrieve labels.
 </ParamField>
+<ParamField query="limit" type="string">
+  Specify number of shown results.
+</ParamField>
+<ParamField query="offset" type="string">
+  Specify the starting point in the list of results for pagination. e.g.
+  `offset=0`, `offset=1`, etc..
+</ParamField>
 
 ### Response
 
@@ -64,7 +71,7 @@ description: "Retrieve user-friendly labels for Arbitrum EOAs (Externally Owned 
 <RequestExample>
 
 ```bash Example Request
-curl --location --request GET 'https://api-c.walletlabels.xyz/arbitrum/label?address=0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f' \
+curl --location --request GET 'https://api-c.walletlabels.xyz/arbitrum/label?address=0xdef1c0ded9bec7f1a1670819833240f027b25eff' \
 --header 'Content-Type: application/json' \
 --header 'x-api-key: demo-api-key-x-00000'
 ```
@@ -77,11 +84,18 @@ curl --location --request GET 'https://api-c.walletlabels.xyz/arbitrum/label?add
 {
   "data": [
     {
-      "address_name": "Uniswap",
-      "address": "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f",
-      "label_type": "contract",
-      "label_subtype": "decentralized_exchange",
-      "label": "Uniswap V2 Factory Contract"
+      "address": "0xdef1c0ded9bec7f1a1670819833240f027b25eff",
+      "address_name": "exchange proxy",
+      "label_type": "dex",
+      "label_subtype": "general_contract",
+      "label": "0x"
+    },
+    {
+      "address": "0xdef1c0ded9bec7f1a1670819833240f027b25eff",
+      "address_name": "aave v3: aave",
+      "label_type": "defi",
+      "label_subtype": "pool",
+      "label": "aave"
     }
   ]
 }

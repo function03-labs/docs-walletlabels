@@ -21,6 +21,13 @@ description: " This endpoint enables you to search and retrieve labels by their 
 <ParamField query="searchtext" type="string" required>
   Specify the name or part of the name of the label you wish to search for.
 </ParamField>
+<ParamField query="limit" type="string">
+  Specify number of shown results.
+</ParamField>
+<ParamField query="offset" type="string">
+  Specify the starting point in the list of results for pagination. 
+  e.g. `offset=0`, `offset=1`, etc..
+</ParamField>
 
 ### Response
 

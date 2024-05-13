@@ -21,6 +21,13 @@ description: "Retrieve user-friendly labels for Optimism EOAs (Externally Owned 
 <ParamField query="address" type="string" required>
   Specify the Optimism address for which you want to retrieve labels.
 </ParamField>
+<ParamField query="limit" type="string">
+  Specify number of shown results.
+</ParamField>
+<ParamField query="offset" type="string">
+  Specify the starting point in the list of results for pagination. e.g.
+  `offset=0`, `offset=1`, etc..
+</ParamField>
 
 ### Response
 
@@ -77,11 +84,11 @@ curl --location --request GET 'https://api-c.walletlabels.xyz/optimism/label?add
 {
   "data": [
     {
-      "address_name": "Uniswap",
-      "address": "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f",
-      "label_type": "contract",
-      "label_subtype": "decentralized_exchange",
-      "label": "Uniswap V2 Factory Contract"
+      "address": "0x049e04bee77cffb055f733a138a2f204d3750283",
+      "address_name": "",
+      "label_type": "token",
+      "label_subtype": "token_contract",
+      "label": ""
     }
   ]
 }
