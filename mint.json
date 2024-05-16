@@ -34,14 +34,8 @@
     "default": "light",
     "isHidden": true
   },
-  "topbarLinks": [
-    {
-      "name": "Get an API key",
-      "url": "https://tally.so/r/mO7PrR"
-    }
-  ],
   "topbarCtaButton": {
-    "name": "WalletLabels",
+    "name": "Get an API key",
     "url": "https://WalletLabels.xyz"
   },
   "footerSocials": {
