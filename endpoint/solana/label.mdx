@@ -18,10 +18,9 @@ description: "Retrieve user-friendly labels for Solana EOAs (Externally Owned Ac
 
 ### Body
 
-{" One of the two following queries options is required to run your query :"}
-
 <ParamField query="address" type="string" required>
-  Specify the Solana address for which you want to retrieve labels.
+  Specify up to 10 Solana addresses for which you want to retrieve labels, separated
+  by commas.
 </ParamField>
 <ParamField query="limit" type="string">
   Specify number of shown results.

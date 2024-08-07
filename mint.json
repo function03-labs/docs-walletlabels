@@ -84,6 +84,10 @@
         {
           "group": "Solana API",
           "pages": ["endpoint/solana/label", "endpoint/solana/search"]
+        },
+        {
+          "group": "Blacklist API",
+          "pages": ["endpoint/blacklist/label"]
         }
       ]
     }

@@ -1,3 +1,4 @@
+
 ---
 title: "Account Labels API"
 api: "GET https://api-c.walletlabels.xyz/ethereum/label"
@@ -19,14 +20,15 @@ description: "Retrieve user-friendly labels for Ethereum EOAs (Externally Owned 
 ### Body
 
 <ParamField query="address" type="string" required>
-  Specify the Ethereum address for which you want to retrieve labels.
+  Specify up to 10 Ethereum addresses for which you want to retrieve labels, separated
+  by commas.
 </ParamField>
 <ParamField query="limit" type="string">
   Specify number of shown results.
 </ParamField>
 <ParamField query="offset" type="string">
-  Specify the starting point in the list of results for pagination. 
-  e.g. `offset=0`, `offset=1`, etc..
+  Specify the starting point in the list of results for pagination. e.g.
+  `offset=0`, `offset=1`, etc..
 </ParamField>
 
 ### Response
