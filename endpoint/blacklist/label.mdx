@@ -19,8 +19,8 @@ description: "Retrieve a curated list of blacklisted addresses from authoritativ
 ### Body
 
 <ParamField query="address" type="string" required>
-  Specify up to 10 Solana addresses for which you want to retrieve labels, separated
-  by commas.
+  Specify up to 10 addresses for which you want to check if they are
+  blacklisted, separated by commas.
 </ParamField>
 <ParamField query="limit" type="string">
   Specify number of shown results.
@@ -32,41 +32,47 @@ description: "Retrieve a curated list of blacklisted addresses from authoritativ
 
 ### Response
 
+
 <ResponseField name="data" type="array">
-  An array that encapsulates the labels corresponding to the Solana address provided.
+An array that encapsulates the blacklist information corresponding to the Ethereum addresses provided.
 
-<Expandable title="Label Object">
+<Expandable title="Blacklist Object"> 
 
-<ResponseField name="address_name" type="string">
-  The designated name associated with the specific Solana address.
+<ResponseField name="address" type="string"> 
+  The Ethereum address that is blacklisted. 
 </ResponseField>
 
 {" "}
 
-<ResponseField name="address" type="string">
-  The Solana address for the label.
+<ResponseField name="blockchain" type="string">
+  The blockchain on which the address is blacklisted.
 </ResponseField>
 
 {" "}
 
-<ResponseField name="label_type" type="string">
-  Categories like 'nft', 'gaming', etc., to define the nature of the label.
+<ResponseField name="source_of_blacklisting" type="string">
+  The source from which the address was blacklisted.
 </ResponseField>
 
 {" "}
 
-<ResponseField name="label_subtype" type="string">
-  Additional attributes, like nf_token_contract or aggregator_contract, for a
-  more granular understanding of the label.
+<ResponseField name="reason_for_blacklisting" type="string">
+  The reason for which the address was blacklisted.
 </ResponseField>
 
 {" "}
 
-<ResponseField name="label" type="string">
-  The general name or title of the label.
+<ResponseField name="date_of_blacklisting" type="string">
+  The date when the address was blacklisted.
 </ResponseField>
 
-  </Expandable>
+{" "}
+
+<ResponseField name="entities" type="string">
+  Any entities associated with the blacklisted address.
+</ResponseField>
+
+</Expandable> 
 </ResponseField>
 
 <RequestExample>
