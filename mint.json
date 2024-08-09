@@ -71,8 +71,16 @@
           ]
         },
         {
+          "group": "Optimism API",
+          "pages": ["endpoint/optimism/label"]
+        },
+        {
+          "group": "Arbitrum API",
+          "pages": ["endpoint/arbitrum/label"]
+        },
+        {
           "group": "Blacklist API",
-          "pages": ["endpoint/blacklist-l/label"]
+          "pages": ["endpoint/blacklist/label"]
         },
         {
           "group": "Solana API",
