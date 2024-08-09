@@ -72,7 +72,7 @@
         },
         {
           "group": "Blacklist API",
-          "pages": ["endpoint/blacklist/label"]
+          "pages": ["endpoint/solana/label"]
         },
         {
           "group": "Solana API",
