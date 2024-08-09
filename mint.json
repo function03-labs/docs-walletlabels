@@ -55,10 +55,6 @@
   ],
   "navigation": [
     {
-      "group": "Getting Started",
-      "pages": ["content/api-references"]
-    },
-    {
       "group": "Essentials",
       "pages": [
         {
@@ -87,6 +83,10 @@
           "pages": ["endpoint/solana/label", "endpoint/solana/search"]
         }
       ]
+    },
+    {
+      "group": "Getting Started",
+      "pages": ["content/api-references"]
     }
   ]
 }
