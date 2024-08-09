@@ -78,7 +78,7 @@ An array that encapsulates the blacklist information corresponding to the Ethere
 <RequestExample>
 
 ```bash Example Request
-curl --location --request GET 'https://api-c.walletlabels.xyz/solana/label?address=6fGr1dR5jBVb58JFgAXvx4rghaoqJMXYZihd19RK898y' \
+curl --location --request GET 'https://api-c.walletlabels.xyz/blacklist/label?address=0x6551fb9be444987f7482012cbf7ea95a1ee8dd0e,0xe4e02c0e150720a277e6643153f8ed88249e3104' \
 --header 'Content-Type: application/json' \
 --header 'x-api-key: demo-api-key-x-00000'
 ```
@@ -91,11 +91,22 @@ curl --location --request GET 'https://api-c.walletlabels.xyz/solana/label?addre
 {
   "data": [
     {
-      "address": "6fGr1dR5jBVb58JFgAXvx4rghaoqJMXYZihd19RK898y",
-      "address_name": "ooz",
-      "label_type": "nft",
-      "label_subtype": "nft",
-      "label": "ooz"
+      "address": "0x6551fb9be444987f7482012cbf7ea95a1ee8dd0e",
+      "blockchain": "Ethereum",
+      "source_of_blacklisting": "USDT",
+      "reason_for_blacklisting": "Involvement in illicit activities or being blacklisted to comply with legal obligations.",
+      "date_of_blacklisting": "2021-11-05 14:56:00.000000 UTC",
+      "last_transaction_date": null,
+      "entities": null
+    },
+    {
+      "address": "0xe4e02c0e150720a277e6643153f8ed88249e3104",
+      "blockchain": "Ethereum",
+      "source_of_blacklisting": "USDT",
+      "reason_for_blacklisting": "Involvement in illicit activities or being blacklisted to comply with legal obligations.",
+      "date_of_blacklisting": "2021-03-03 20:14:06.000000 UTC",
+      "last_transaction_date": "2021-03-22 18:18:41.000000 UTC",
+      "entities": null
     }
   ]
 }
