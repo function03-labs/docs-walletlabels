@@ -32,42 +32,47 @@ description: "Retrieve a curated list of blacklisted addresses from authoritativ
 
 ### Response
 
-<ResponseField name="data" type="array"> An array that encapsulates the blacklist information corresponding to the Ethereum addresses provided.
-  <Expandable title="Blacklist Object"> 
-    <ResponseField name="address" type="string"> 
-      The Ethereum address that is blacklisted. 
-    </ResponseField>
 
-    {" "}
+<ResponseField name="data" type="array">
+An array that encapsulates the blacklist information corresponding to the Ethereum addresses provided.
 
-    <ResponseField name="blockchain" type="string">
-      The blockchain on which the address is blacklisted.
-    </ResponseField>
+<Expandable title="Blacklist Object"> 
 
-    {" "}
+<ResponseField name="address" type="string"> 
+  The Ethereum address that is blacklisted. 
+</ResponseField>
 
-    <ResponseField name="source_of_blacklisting" type="string">
-      The source from which the address was blacklisted.
-    </ResponseField>
+{" "}
 
-    {" "}
+<ResponseField name="blockchain" type="string">
+  The blockchain on which the address is blacklisted.
+</ResponseField>
 
-    <ResponseField name="reason_for_blacklisting" type="string">
-      The reason for which the address was blacklisted.
-    </ResponseField>
+{" "}
 
-    {" "}
+<ResponseField name="source_of_blacklisting" type="string">
+  The source from which the address was blacklisted.
+</ResponseField>
 
-    <ResponseField name="date_of_blacklisting" type="string">
-      The date when the address was blacklisted.
-    </ResponseField>
-    
-    {" "}
+{" "}
 
-    <ResponseField name="entities" type="string">
-      Any entities associated with the blacklisted address.
-    </ResponseField>
-  </Expandable> 
+<ResponseField name="reason_for_blacklisting" type="string">
+  The reason for which the address was blacklisted.
+</ResponseField>
+
+{" "}
+
+<ResponseField name="date_of_blacklisting" type="string">
+  The date when the address was blacklisted.
+</ResponseField>
+
+{" "}
+
+<ResponseField name="entities" type="string">
+  Any entities associated with the blacklisted address.
+</ResponseField>
+
+</Expandable> 
 </ResponseField>
 
 <RequestExample>

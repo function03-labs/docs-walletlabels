@@ -16,7 +16,6 @@
       "mode": "show"
     }
   },
-
   "favicon": "/favicon.png",
   "colors": {
     "primary": "#9563FF",
@@ -42,14 +41,12 @@
     "twitter": "https://twitter.com/walletlabels",
     "telegram": "https://t.me/+yDF9bnv2R7RkNWZk"
   },
-
   "anchors": [
     {
       "name": "API Reference",
       "icon": "code",
       "url": "content/"
     },
-
     {
       "name": "Community",
       "icon": "telegram",
@@ -82,12 +79,12 @@
           "pages": ["endpoint/arbitrum/label"]
         },
         {
-          "group": "Solana API",
-          "pages": ["endpoint/solana/label", "endpoint/solana/search"]
-        },
-        {
           "group": "Blacklist API",
           "pages": ["endpoint/blacklist/label"]
+        },
+        {
+          "group": "Solana API",
+          "pages": ["endpoint/solana/label", "endpoint/solana/search"]
         }
       ]
     }
