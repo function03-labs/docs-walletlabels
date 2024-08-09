@@ -82,12 +82,12 @@
           "pages": ["endpoint/arbitrum/label"]
         },
         {
-          "group": "Solana API",
-          "pages": ["endpoint/solana/label", "endpoint/solana/search"]
-        },
-        {
           "group": "Blacklist API",
           "pages": ["endpoint/blacklist/label"]
+        },
+        {
+          "group": "Solana API",
+          "pages": ["endpoint/solana/label", "endpoint/solana/search"]
         }
       ]
     }
