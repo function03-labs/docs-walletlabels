@@ -1,25 +1,16 @@
 ---
-title: "Search By Label (Main)"
-api: "GET https://api-c.walletlabels.xyz/ethereum/search"
-description: " This endpoint enables you to search and retrieve labels by their names. It's particularly useful for finding specific Ethereum accounts based on labels."
+title: "Search By Label"
+api: "GET /api/arbitrum/search/{searchtext}"
+description: " This endpoint enables you to search and retrieve labels by a given search term. It's particularly useful for finding specific Arbitrum accounts based on labels, types or subtypes."
 ---
 
-### Authorization
+### Inputs
 
-<ResponseField
-  name="x-api-key"
-  type="string"
-  default="demo-api-key-x-00000"
-  initialValue="demo-api-key-x-00000"
-  required
->
+<ParamField path="searchtext" type="string" required>
+  Specify the term or part of the search term you wish to search for.
+</ParamField>
+<ParamField query="apikey" type="string" required>
   Your API key for authentication.
-</ResponseField>
-
-### Query Params
-
-<ParamField query="searchtext" type="string" required>
-  Specify the name or part of the name of the label you wish to search for.
 </ParamField>
 <ParamField query="limit" type="string">
   Specify number of shown results.
@@ -32,18 +23,24 @@ description: " This endpoint enables you to search and retrieve labels by their 
 ### Response
 
 <ResponseField name="data" type="array">
-  An array that encapsulates the labels corresponding to the Ethereum address provided.
+  An array that encapsulates the labels corresponding to the search term provided.
 
 <Expandable title="Label Object">
 
+<ResponseField name="blockchain" type="string">
+  Name of the blockchain network.
+</ResponseField>
+
+{" "}
+
 <ResponseField name="address_name" type="string">
-  The designated name associated with the specific Ethereum address.
+  The designated name associated with the specific Arbitrum address.
 </ResponseField>
 
 {" "}
 
 <ResponseField name="address" type="string">
-  The Ethereum address for the label.
+  The Arbitrum address for the label.
 </ResponseField>
 
 {" "}
@@ -71,9 +68,8 @@ description: " This endpoint enables you to search and retrieve labels by their 
 <RequestExample>
 
 ```bash
-curl --location --request GET 'https://api-c.walletlabels.xyz/ethereum/search?searchtext=Uniswap' \
---header 'Content-Type: application/json' \
---header 'x-api-key: demo-api-key-x-00000'
+curl --location --request GET 'https://api-c.walletlabels.xyz/api/arbitrum/search/Uniswap?apikey=demo-api-key-x-00000' \
+--header 'Content-Type: application/json'
 
 ```
 
@@ -84,14 +80,16 @@ curl --location --request GET 'https://api-c.walletlabels.xyz/ethereum/search?se
 ```json
 {
   "data": [
-    {
+    {   
+      "blockchain": "arbitrum",
       "address_name": "Uniswap",
       "address": "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f",
       "label_type": "contract",
       "label_subtype": "decentralized_exchange",
       "label": "Uniswap V2 Factory Contract"
     },
-    {
+    {  
+      "blockchain": "arbitrum",
       "address_name": "DAI Stablecoin",
       "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
       "label_type": "token",

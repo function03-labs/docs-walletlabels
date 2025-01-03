@@ -6,12 +6,7 @@
     "light": "/logo/logo.png"
   },
   "api": {
-    "baseUrl": "https://api-c.walletlabels.xyz/",
-    "auth": {
-      "method": "key",
-      "name": "x-api-key",
-      "inputPrefix": "demo-api-key-x-00000"
-    },
+    "baseUrl": "https://34.36.8.3.nip.io/",
     "playground": {
       "mode": "show"
     }
@@ -64,27 +59,44 @@
         {
           "group": "Ethereum API",
           "pages": [
-            "endpoint/search",
-            "endpoint/label",
-            "endpoint/mev_label",
-            "endpoint/mev_search"
+            "endpoint/ethereum/label",
+            "endpoint/ethereum/search"
           ]
         },
         {
           "group": "Optimism API",
-          "pages": ["endpoint/optimism/label"]
+          "pages": [
+            "endpoint/optimism/label",
+            "endpoint/optimism/search"          
+          ]
         },
         {
           "group": "Arbitrum API",
-          "pages": ["endpoint/arbitrum/label"]
+          "pages": [
+            "endpoint/arbitrum/label",
+            "endpoint/arbitrum/search"
+        ]
         },
         {
-          "group": "Blacklist API",
-          "pages": ["endpoint/blacklist/label"]
+          "group": "Base API",
+          "pages": [
+            "endpoint/base/label",
+            "endpoint/base/search"
+          ]
         },
         {
           "group": "Solana API",
-          "pages": ["endpoint/solana/label", "endpoint/solana/search"]
+          "pages": [
+            "endpoint/solana/label", 
+            "endpoint/solana/search"
+          ]
+        },
+        {
+          "group": "Bitcoin API",
+          "pages": [
+            "endpoint/bitcoin/label",
+            "endpoint/bitcoin/search"
+          ]
         }
       ]
     }
