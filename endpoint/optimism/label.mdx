@@ -1,26 +1,16 @@
 ---
 title: "Account Labels API"
-api: "GET https://api-c.walletlabels.xyz/optimism/label"
+api: "GET /api/optimism/label/{address}"
 description: "Retrieve user-friendly labels for Optimism EOAs (Externally Owned Accounts) and Smart Contracts. Labels can be incredibly useful for categorizing your Optimism interactions."
 ---
 
-### Authorization
+### Inputs
 
-<ResponseField
-  name="x-api-key"
-  type="string"
-  default="demo-api-key-x-00000"
-  initialValue="demo-api-key-x-00000"
-  required
->
+<ParamField path="address" type="string" required>
+  Specify up the Optimism addresse for which you want to retrieve labels.
+</ParamField>
+<ParamField query="apikey" type="string" required>
   Your API key for authentication.
-</ResponseField>
-
-### Body
-
-<ParamField query="address" type="string" required>
-  Specify up to 10 Optimism addresses for which you want to retrieve labels, separated
-  by commas.
 </ParamField>
 <ParamField query="limit" type="string">
   Specify number of shown results.
@@ -33,12 +23,18 @@ description: "Retrieve user-friendly labels for Optimism EOAs (Externally Owned 
 ### Response
 
 <ResponseField name="data" type="array">
-  An array that encapsulates the labels corresponding to the Optimism address provided.
+  An array that encapsulates the labels corresponding to the optimism address provided.
 
 <Expandable title="Label Object">
 
+<ResponseField name="blockchain" type="string">
+  Name of the blockchain network.
+</ResponseField>
+
+{" "}
+
 <ResponseField name="address_name" type="string">
-  The designated name associated with the specific Optimism address.
+  The designated name associated with the specific optimism address.
 </ResponseField>
 
 {" "}
@@ -72,9 +68,8 @@ description: "Retrieve user-friendly labels for Optimism EOAs (Externally Owned 
 <RequestExample>
 
 ```bash Example Request
-curl --location --request GET 'https://api-c.walletlabels.xyz/optimism/label?address=0x049e04bee77cffb055f733a138a2f204d3750283' \
---header 'Content-Type: application/json' \
---header 'x-api-key: demo-api-key-x-00000'
+curl --location --request GET 'https://api.walletlabels.xyz/api/optimism/label/0xdef1c0ded9bec7f1a1670819833240f027b25eff?apikey=demo-api-key-x-00000' \
+--header 'Content-Type: application/json' 
 ```
 
 </RequestExample>
@@ -84,12 +79,13 @@ curl --location --request GET 'https://api-c.walletlabels.xyz/optimism/label?add
 ```json Response
 {
   "data": [
-    {
-      "address": "0x049e04bee77cffb055f733a138a2f204d3750283",
-      "address_name": "",
-      "label_type": "token",
-      "label_subtype": "token_contract",
-      "label": ""
+    { 
+      "blockchain": "optimism",
+      "address": "0xdef1c0ded9bec7f1a1670819833240f027b25eff",
+      "address_name": "aave v3: aave",
+      "label_type": "defi",
+      "label_subtype": "pool",
+      "label": "aave"
     }
   ]
 }

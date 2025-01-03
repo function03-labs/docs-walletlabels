@@ -1,7 +1,7 @@
 ---
 title: "Search By Label"
-api: "GET /api/solana/search/{searchtext}"
-description: " This endpoint enables you to search and retrieve labels by a given search term. It's particularly useful for finding specific Solana accounts based on labels, types or subtypes."
+api: "GET /api/base/search/{searchtext}"
+description: " This endpoint enables you to search and retrieve labels by a given search term. It's particularly useful for finding specific Base accounts based on labels, types or subtypes."
 ---
 
 ### Inputs
@@ -34,13 +34,13 @@ description: " This endpoint enables you to search and retrieve labels by a give
 {" "}
 
 <ResponseField name="address_name" type="string">
-  The designated name associated with the specific Solana address.
+  The designated name associated with the specific Base address.
 </ResponseField>
 
 {" "}
 
 <ResponseField name="address" type="string">
-  The Solana address for the label.
+  The Base address for the label.
 </ResponseField>
 
 {" "}
@@ -68,7 +68,7 @@ description: " This endpoint enables you to search and retrieve labels by a give
 <RequestExample>
 
 ```bash
-curl --location --request GET 'https://api.walletlabels.xyz/api/solana/search/Uniswap?apikey=demo-api-key-x-00000' \
+curl --location --request GET 'https://api.walletlabels.xyz/api/base/search/Uniswap?apikey=demo-api-key-x-00000' \
 --header 'Content-Type: application/json'
 
 ```
@@ -81,7 +81,7 @@ curl --location --request GET 'https://api.walletlabels.xyz/api/solana/search/Un
 {
   "data": [
     {   
-      "blockchain": "solana",
+      "blockchain": "base",
       "address_name": "Uniswap",
       "address": "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f",
       "label_type": "contract",
@@ -89,7 +89,7 @@ curl --location --request GET 'https://api.walletlabels.xyz/api/solana/search/Un
       "label": "Uniswap V2 Factory Contract"
     },
     {  
-      "blockchain": "solana",
+      "blockchain": "base",
       "address_name": "DAI Stablecoin",
       "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
       "label_type": "token",

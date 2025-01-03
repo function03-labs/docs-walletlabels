@@ -1,13 +1,13 @@
 ---
 title: "Account Labels API"
-api: "GET /api/arbitrum/label/{address}"
-description: "Retrieve user-friendly labels for Arbitrum EOAs (Externally Owned Accounts) and Smart Contracts. Labels can be incredibly useful for categorizing your Arbitrum interactions."
+api: "GET /api/ethereum/label/{address}"
+description: "Retrieve user-friendly labels for Ethereum EOAs (Externally Owned Accounts) and Smart Contracts. Labels can be incredibly useful for categorizing your Ethereum interactions."
 ---
 
 ### Inputs
 
 <ParamField path="address" type="string" required>
-  Specify up the Arbitrum addresse for which you want to retrieve labels.
+  Specify up the Ethereum addresse for which you want to retrieve labels.
 </ParamField>
 <ParamField query="apikey" type="string" required>
   Your API key for authentication.
@@ -23,7 +23,7 @@ description: "Retrieve user-friendly labels for Arbitrum EOAs (Externally Owned 
 ### Response
 
 <ResponseField name="data" type="array">
-  An array that encapsulates the labels corresponding to the Arbitrum address provided.
+  An array that encapsulates the labels corresponding to the Ethereum address provided.
 
 <Expandable title="Label Object">
 
@@ -34,13 +34,13 @@ description: "Retrieve user-friendly labels for Arbitrum EOAs (Externally Owned 
 {" "}
 
 <ResponseField name="address_name" type="string">
-  The designated name associated with the specific Arbitrum address.
+  The designated name associated with the specific Ethereum address.
 </ResponseField>
 
 {" "}
 
 <ResponseField name="address" type="string">
-  The Arbitrum address for the label.
+  The Ethereum address for the label.
 </ResponseField>
 
 {" "}
@@ -80,7 +80,7 @@ curl --location --request GET 'https://api.walletlabels.xyz/api/arbitrum/label/0
 {
   "data": [
     { 
-      "blockchain": "arbitrum",
+      "blockchain": "ethereum",
       "address": "0xdef1c0ded9bec7f1a1670819833240f027b25eff",
       "address_name": "aave v3: aave",
       "label_type": "defi",

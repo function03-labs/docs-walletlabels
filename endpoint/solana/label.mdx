@@ -1,26 +1,16 @@
 ---
 title: "Account Labels API"
-api: "GET https://api-c.walletlabels.xyz/solana/label"
+api: "GET /api/solana/label/{address}"
 description: "Retrieve user-friendly labels for Solana EOAs (Externally Owned Accounts) and Smart Contracts. Labels can be incredibly useful for categorizing your Solana interactions."
 ---
 
-### Authorization
+### Inputs
 
-<ResponseField
-  name="x-api-key"
-  type="string"
-  default="demo-api-key-x-00000"
-  initialValue="demo-api-key-x-00000"
-  required
->
+<ParamField path="address" type="string" required>
+  Specify up the Solana addresse for which you want to retrieve labels.
+</ParamField>
+<ParamField query="apikey" type="string" required>
   Your API key for authentication.
-</ResponseField>
-
-### Body
-
-<ParamField query="address" type="string" required>
-  Specify up to 10 Solana addresses for which you want to retrieve labels, separated
-  by commas.
 </ParamField>
 <ParamField query="limit" type="string">
   Specify number of shown results.
@@ -33,12 +23,18 @@ description: "Retrieve user-friendly labels for Solana EOAs (Externally Owned Ac
 ### Response
 
 <ResponseField name="data" type="array">
-  An array that encapsulates the labels corresponding to the Solana address provided.
+  An array that encapsulates the labels corresponding to the ethereum address provided.
 
 <Expandable title="Label Object">
 
+<ResponseField name="blockchain" type="string">
+  Name of the blockchain network.
+</ResponseField>
+
+{" "}
+
 <ResponseField name="address_name" type="string">
-  The designated name associated with the specific Solana address.
+  The designated name associated with the specific SoLana address.
 </ResponseField>
 
 {" "}
@@ -50,13 +46,13 @@ description: "Retrieve user-friendly labels for Solana EOAs (Externally Owned Ac
 {" "}
 
 <ResponseField name="label_type" type="string">
-  Categories like 'nft', 'gaming', etc., to define the nature of the label.
+  Categories like 'token', 'exchange', etc., to define the nature of the label.
 </ResponseField>
 
 {" "}
 
 <ResponseField name="label_subtype" type="string">
-  Additional attributes, like nf_token_contract or aggregator_contract, for a
+  Additional attributes, like token_contract_address or exchange_name, for a
   more granular understanding of the label.
 </ResponseField>
 
@@ -72,9 +68,8 @@ description: "Retrieve user-friendly labels for Solana EOAs (Externally Owned Ac
 <RequestExample>
 
 ```bash Example Request
-curl --location --request GET 'https://api-c.walletlabels.xyz/solana/label?address=6fGr1dR5jBVb58JFgAXvx4rghaoqJMXYZihd19RK898y' \
---header 'Content-Type: application/json' \
---header 'x-api-key: demo-api-key-x-00000'
+curl --location --request GET 'https://api.walletlabels.xyz/api/solana/label/0xdef1c0ded9bec7f1a1670819833240f027b25eff?apikey=demo-api-key-x-00000' \
+--header 'Content-Type: application/json' 
 ```
 
 </RequestExample>
@@ -84,12 +79,13 @@ curl --location --request GET 'https://api-c.walletlabels.xyz/solana/label?addre
 ```json Response
 {
   "data": [
-    {
-      "address": "6fGr1dR5jBVb58JFgAXvx4rghaoqJMXYZihd19RK898y",
-      "address_name": "ooz",
-      "label_type": "nft",
-      "label_subtype": "nft",
-      "label": "ooz"
+    { 
+      "blockchain": "solana",
+      "address": "0xdef1c0ded9bec7f1a1670819833240f027b25eff",
+      "address_name": "aave v3: aave",
+      "label_type": "defi",
+      "label_subtype": "pool",
+      "label": "aave"
     }
   ]
 }

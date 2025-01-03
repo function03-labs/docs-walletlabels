@@ -1,13 +1,13 @@
 ---
-title: "Account Labels API"
-api: "GET /api/arbitrum/label/{address}"
-description: "Retrieve user-friendly labels for Arbitrum EOAs (Externally Owned Accounts) and Smart Contracts. Labels can be incredibly useful for categorizing your Arbitrum interactions."
+title: "Search By Label"
+api: "GET /api/arbitrum/search/{searchtext}"
+description: " This endpoint enables you to search and retrieve labels by a given search term. It's particularly useful for finding specific Arbitrum accounts based on labels, types or subtypes."
 ---
 
 ### Inputs
 
-<ParamField path="address" type="string" required>
-  Specify up the Arbitrum addresse for which you want to retrieve labels.
+<ParamField path="searchtext" type="string" required>
+  Specify the term or part of the search term you wish to search for.
 </ParamField>
 <ParamField query="apikey" type="string" required>
   Your API key for authentication.
@@ -16,14 +16,14 @@ description: "Retrieve user-friendly labels for Arbitrum EOAs (Externally Owned 
   Specify number of shown results.
 </ParamField>
 <ParamField query="offset" type="string">
-  Specify the starting point in the list of results for pagination. e.g.
-  `offset=0`, `offset=1`, etc..
+  Specify the starting point in the list of results for pagination. 
+  e.g. `offset=0`, `offset=1`, etc..
 </ParamField>
 
 ### Response
 
 <ResponseField name="data" type="array">
-  An array that encapsulates the labels corresponding to the Arbitrum address provided.
+  An array that encapsulates the labels corresponding to the search term provided.
 
 <Expandable title="Label Object">
 
@@ -67,26 +67,36 @@ description: "Retrieve user-friendly labels for Arbitrum EOAs (Externally Owned 
 
 <RequestExample>
 
-```bash Example Request
-curl --location --request GET 'https://api.walletlabels.xyz/api/arbitrum/label/0xdef1c0ded9bec7f1a1670819833240f027b25eff?apikey=demo-api-key-x-00000' \
---header 'Content-Type: application/json' 
+```bash
+curl --location --request GET 'https://api.walletlabels.xyz/api/arbitrum/search/Uniswap?apikey=demo-api-key-x-00000' \
+--header 'Content-Type: application/json'
+
 ```
 
 </RequestExample>
 
 <ResponseExample>
 
-```json Response
+```json
 {
   "data": [
-    { 
+    {   
       "blockchain": "arbitrum",
-      "address": "0xdef1c0ded9bec7f1a1670819833240f027b25eff",
-      "address_name": "aave v3: aave",
-      "label_type": "defi",
-      "label_subtype": "pool",
-      "label": "aave"
+      "address_name": "Uniswap",
+      "address": "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f",
+      "label_type": "contract",
+      "label_subtype": "decentralized_exchange",
+      "label": "Uniswap V2 Factory Contract"
+    },
+    {  
+      "blockchain": "arbitrum",
+      "address_name": "DAI Stablecoin",
+      "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "label_type": "token",
+      "label_subtype": "erc20",
+      "label": "DAI ERC20 Token Contract"
     }
+    // ... more results ...
   ]
 }
 ```

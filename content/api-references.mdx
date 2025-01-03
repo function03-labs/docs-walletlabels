@@ -8,7 +8,7 @@ Our API offers a comprehensive suite of tools for labeling and analyzing blockch
 
 ## Getting Started
 
-**Base URL:** `https://api-c.walletlabels.xyz/`
+**Base URL:** `https://api.walletlabels.xyz/api/`
 
 To begin using the WalletLabels API, you first need to obtain an API key. Please [register here](https://walletlabels.xyz) to get started.
 
@@ -16,11 +16,10 @@ To begin using the WalletLabels API, you first need to obtain an API key. Please
 
 <Tip>Currently, there are no rate limits on API requests.</Tip>
 
-Use your API key in every request to the API:
+Use your API key as a query parameter in every request to the API:
 
 ```http
-Headers:
-  x-api-key: demo-api-key-x-00000
+   ?apikey=demo-api-key-x-00000
 ``` 
 
 
@@ -29,7 +28,6 @@ Label Data Structure
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `_id` | String | Unique identifier for the label record. |
 | `blockchain` | String | Name of the blockchain network. |
 | `address` | String | Blockchain address being labeled. |
 | `address_name` | String | Human-readable name for the address. |
@@ -40,7 +38,7 @@ Label Data Structure
 Playground
 ----------
 
-Test the API live in our [playground](https://docs.walletlabels.xyz/endpoint/search). Try out different requests and see real-time responses.
+Test the API live in our [playground](https://docs.walletlabels.xyz/endpoint/ethereum/search). Try out different requests and see real-time responses.
 
 Support and Community
 ---------------------
