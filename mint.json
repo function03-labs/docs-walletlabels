@@ -6,7 +6,7 @@
     "light": "/logo/logo.png"
   },
   "api": {
-    "baseUrl": "https://34.36.8.3.nip.io/",
+    "baseUrl": "https://api.walletlabels.xyz/",
     "playground": {
       "mode": "show"
     }
